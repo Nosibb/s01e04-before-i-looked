@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-22
 ---
 
 # Morning digest
@@ -77,3 +78,20 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Digest: DigestRow type and readNight signature | — | claude-code · opus-5.5 · default | 2026-11-22 |
+| 2 | Run log reader: readNight | #1 | claude-code · opus-5.5 · default | 2026-11-22 |
+| 3 | Digest page: GET /digest/:night | #1, #2 | claude-code · sonnet-5.5 · default | 2026-11-22 |
+| 4 | Digest JSON: GET /api/digest/:night | #1, #2 | claude-code · sonnet-5.5 · default | 2026-11-22 |
+| 5 | Status board: link each night to its digest | #1, #2, #3 | claude-code · sonnet-5.5 · default | 2026-11-22 |
+| 6 | Route tests for /digest and /api/digest | #3, #4 | claude-code · sonnet-5.5 · default | 2026-11-22 |
+| 7 | Preview for review: digest 2026-10-28 on a public link | #3 | claude-code · opus-5.5 · default | 2026-11-22 |
+| 8 | Clean up: take the lane marker off the preview, close the plan | #7, review | claude-code · opus-5.5 · default | 2026-11-22 |
+
+#2 added `fails` and `counts` to the #1 contract: the page marks any fail, the board shows counts.
+#7 was closed before the reviewer looked and reopened; it closed once the review was in.
+The preview (https://nosibb.github.io/rig-preview/) was re-uploaded without the marker on 2026-11-22.
